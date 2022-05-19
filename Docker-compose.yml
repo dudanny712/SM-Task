@@ -1,0 +1,34 @@
+version: "3"
+services:
+  react-app:
+    image: sm-react-app-dev
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - sm-app
+
+  api-server:
+    image: sm-server
+    env_file: ./backend/config/dev.env
+    ports:
+      - "5000:5000"
+    networks:
+      - sm-app
+
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:4.4-bionic
+    ports:
+      - "27017:27017"
+    networks:
+      - sm-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  sm-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
