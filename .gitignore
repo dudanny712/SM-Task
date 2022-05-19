@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+
+# to not publish our solution for the DevOps Challenge
+docker-compose.yml
+Dockerfile
+.dockerignore
+.gitlab-ci.yml
