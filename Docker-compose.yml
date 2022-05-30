@@ -28,10 +28,11 @@ services:
     networks:
       - sm-app
     volumes:
-      - mongo-data:/data/db
+      - mongodb:/data/db
 networks:
   sm-app:
     driver: bridge
 volumes:
-  mongo-data:
+  mongodb:
     driver: local
+    
