@@ -3,4 +3,4 @@ build-dev:
 	cd backend && $(MAKE) build
 
 run-dev:
-	docker-compose -f docker-compose.yml up
+	docker-compose -f Docker-compose.yml up
