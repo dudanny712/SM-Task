@@ -3,6 +3,10 @@ services:
   react-app:
     image: sm-react-app-dev
     stdin_open: true
+    
+#tty and stdin_open are analogous to the -t and -i arguments for the docker run command, respectively.
+#You use stdin_open when you need to work on a project outside the Docker container. 
+#You use tty when you need to work on a project inside the Docker container
     ports:
       - "8000:8000"
     networks:
